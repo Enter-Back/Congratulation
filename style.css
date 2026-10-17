@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  background-image: url('Frame85v3.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: 'Gabriola', Courier, monospace;
+  overflow: hidden;
+}
+
+.center {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  pointer-events: none;
+}
+
+#intro {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  transform: translateY(40vh);
+  opacity: 0;
+  transition:
+    transform 2.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   2.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#intro.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+#intro.leaving {
+  transform: translateY(40vh);
+  opacity: 0;
+  transition:
+    transform 1.5s cubic-bezier(0.5, 0, 0.75, 0),
+    opacity   1.5s cubic-bezier(0.5, 0, 0.75, 0);
+}
+
+#hint {
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+#hint.visible { opacity: 1; }
+
+.mainCong {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10vw;
+  pointer-events: none;
+}
+
+#line {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: bold;
+  white-space: pre-wrap;
+  max-width: 90vw;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+#line.visible {
+  opacity: 1;
+}
+
+.congText {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  padding: 0 10vw;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: bold;
+  pointer-events: none;
+  line-height: 1.4;
+
+  opacity: 0;
+  transition:
+    transform 2.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   2.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.congText.visible {
+  opacity: 1;
+}
+
+.finalScene {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10vw;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.finalScene.visible { opacity: 1; }
+
+.f-typed {
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  min-height: 1.4em;
+}
+
+.f-small {
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+
+  transform: translateY(40vh);
+  opacity: 0;
+  transition:
+    transform 2.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   2.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.f-small.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.f-tiny {
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: normal;
+  margin-top: 0.8rem;
+
+  transform: translateY(40vh);
+  opacity: 0;
+  transition:
+    transform 2.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   2.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.f-tiny.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
